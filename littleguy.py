@@ -61,10 +61,10 @@ def send_text(phone_number, msg):
     server = smtplib.SMTP('smtp.gmail.com:587')
     server.ehlo()
     server.starttls()
-    server.login('tomasbielskis@gmail.com', 'bnqnqrzyyaewzwqr')
+    server.login('name@gmail.com', 'bnqnqrzyyaewzwqr')
     server.sendmail(fromaddr, toaddrs, msg)     
-    server.sendmail(fromaddr, 'tomasbielskis@gmail.com', msg)
-    server.sendmail(fromaddr, 'jaclyn.harr@gmail.com', msg)
+    server.sendmail(fromaddr, 'name@gmail.com', msg)
+    server.sendmail(fromaddr, 'name2@gmail.com', msg)
     server.quit()
 
 def get_current_time():
@@ -77,7 +77,7 @@ if __name__ == '__main__':
     # Send the SMS message if there are new results
     if has_new_records(results):
         message = "Hey - there are new littleguy postings"
-        PHONE_NUMBER = 2064327469
+        PHONE_NUMBER = 8888888888
         print ("[{0}] There are new results - sending text message to {1}".format(get_current_time(), PHONE_NUMBER))
         send_text(PHONE_NUMBER, message)
         write_results(results)
